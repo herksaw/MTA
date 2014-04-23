@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Event</name>
+    <events>
+        <event-group description="" sid="7242745080238681" title="System">
+            <sub-events>
+                <event-block sid="8728684888057143">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9026049633005454" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="8905782259001296" type="BoxVersion">
+                            <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6538392556319788">
+                    <conditions>
+                        <condition id="5" name="Is downloading update" sid="3287609149814247" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="9916772578605427" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;Downloading update...&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2096565500164909">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is downloading update" sid="3773318916117016" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4763309373335595" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;No update found.&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3577309363543436">
+                    <conditions>
+                        <condition id="6" name="On update ready" sid="3309157865165743" type="Browser" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="3744009609794873" type="BoxUpdate">
+                            <param id="0" name="Text">&quot;Update installed.&quot;</param>
+                        </action>
+                        <action id="0" name="Alert" sid="1396324908705688" type="Browser">
+                            <param id="0" name="Message">&quot;My Twisted Alien has successfully installed an update just now. Please restart your game to view the changes.&quot;</param>
+                        </action>
+                        <action id="-21" name="Reset global variables" sid="9260041274936873" type="System" />
+                        <action id="-26" name="Restart layout" sid="6785285002806866" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6253389085095574" title="Level">
+            <sub-events>
+                <event-block sid="7051614135628308">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="361438989576911" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="6606031094312395" type="BackgroundSpace">
+                            <param id="0" name="X">Self.X - (Self.Speed * dt)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9459109388590807">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="2155406213240477" type="BackgroundSpace">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">-Self.Width / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="9779583584992122" type="BackgroundSpace">
+                            <param id="0" name="X">LayoutWidth + (Self.Width / 2) - (Self.Speed * dt)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5250872597120368" title="Input">
+            <sub-events>
+                <event-block sid="2940497964546307">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="1912706115045365" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="8244135530209524" type="Spaceship">
+                            <param id="0" name="Vector Y">-500</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="291466252372236">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="107164646572773" type="Keyboard" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="960342423912742" type="Spaceship">
+                            <param id="0" name="Vector Y">-500</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
