@@ -59,8 +59,8 @@
                         <condition id="-1" name="Every tick" sid="361438989576911" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-1" name="Set X" sid="6606031094312395" type="BackgroundSpace">
-                            <param id="0" name="X">floor(Self.X - Self.Speed)</param>
+                        <action id="-1" name="Set X" sid="891682156928586" type="BackgroundSpace">
+                            <param id="0" name="X">Self.X - Self.Speed</param>
                         </action>
                     </actions>
                 </event-block>
@@ -72,10 +72,10 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-1" name="Set X" sid="9779583584992122" type="BackgroundSpace">
-                            <param id="0" name="X">floor(LayoutWidth + (Self.Width / 2)) - 10</param>
+                        <action id="-1" name="Set X" sid="2157408815158385" type="BackgroundSpace">
+                            <param id="0" name="X">LayoutWidth + (Self.Width / 2) - 10</param>
                         </action>
-                        <action id="-1" name="Set X" sid="5103888537448695" type="BackgroundSpace">
+                        <action id="-1" name="Set X" sid="4301330450895761" type="BackgroundSpace">
                             <param id="0" name="X">floor(Self.X - Self.Speed)</param>
                         </action>
                     </actions>
