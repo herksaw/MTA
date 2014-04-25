@@ -4,8 +4,8 @@
     <sid>9696293003707038</sid>
     <event-sheet>Game Event</event-sheet>
     <size>
-        <width>2048</width>
-        <height>1536</height>
+        <width>2560</width>
+        <height>1440</height>
     </size>
     <margins>
         <horizontal>3000</horizontal>
@@ -35,16 +35,16 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Speed>500</Speed>
+                        <Speed>8</Speed>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1024</x>
-                        <y>768</y>
+                        <x>1280</x>
+                        <y>720</y>
                         <z>0</z>
-                        <width>2048</width>
-                        <height>1536</height>
+                        <width>2560</width>
+                        <height>1440</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -60,70 +60,16 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Speed>500</Speed>
+                        <Speed>8</Speed>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>3070</x>
-                        <y>768</y>
+                        <x>3840</x>
+                        <y>720</y>
                         <z>0</z>
-                        <width>2048</width>
-                        <height>1536</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="BoxUpdate" uid="5">
-                    <properties>
-                        <text>No update found.</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-80,400,0</font>
-                        <color>255,255,255</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>400</x>
-                        <y>1476</y>
-                        <z>0</z>
-                        <width>800</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="BoxVersion" uid="6">
-                    <properties>
-                        <text>Version</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-80,400,0</font>
-                        <color>255,255,255</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1200</x>
-                        <y>1476</y>
-                        <z>0</z>
-                        <width>800</width>
-                        <height>120</height>
+                        <width>2560</width>
+                        <height>1440</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -177,11 +123,65 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1024</x>
-                        <y>768</y>
+                        <x>1280</x>
+                        <y>720</y>
                         <z>0</z>
                         <width>500</width>
                         <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BoxUpdate" uid="5">
+                    <properties>
+                        <text>No update found.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-80,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>400</x>
+                        <y>1380</y>
+                        <z>0</z>
+                        <width>800</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BoxVersion" uid="6">
+                    <properties>
+                        <text>Version</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-80,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1200</x>
+                        <y>1380</y>
+                        <z>0</z>
+                        <width>800</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
