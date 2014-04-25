@@ -60,7 +60,7 @@
                     </conditions>
                     <actions>
                         <action id="-1" name="Set X" sid="6606031094312395" type="BackgroundSpace">
-                            <param id="0" name="X">Self.X - Self.Speed</param>
+                            <param id="0" name="X">floor(Self.X - Self.Speed)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -73,10 +73,10 @@
                     </conditions>
                     <actions>
                         <action id="-1" name="Set X" sid="9779583584992122" type="BackgroundSpace">
-                            <param id="0" name="X">LayoutWidth + (Self.Width / 2)</param>
+                            <param id="0" name="X">floor(LayoutWidth + (Self.Width / 2)) - 10</param>
                         </action>
                         <action id="-1" name="Set X" sid="5103888537448695" type="BackgroundSpace">
-                            <param id="0" name="X">Self.X - Self.Speed</param>
+                            <param id="0" name="X">floor(Self.X - Self.Speed)</param>
                         </action>
                     </actions>
                 </event-block>
