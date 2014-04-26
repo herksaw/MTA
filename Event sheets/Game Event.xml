@@ -66,6 +66,7 @@
                         <action id="-1" name="Set X" sid="1562067723295286" type="Asteroid">
                             <param id="0" name="X">Self.X - Self.Speed</param>
                         </action>
+                        <action id="-24" name="Move to top" sid="7442519805274004" type="Spaceship" />
                     </actions>
                 </event-block>
                 <event-block sid="4193027401749945">
