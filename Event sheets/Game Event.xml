@@ -66,6 +66,9 @@
                         <action id="-1" name="Set X" sid="1562067723295286" type="Asteroid">
                             <param id="0" name="X">Self.X - Self.Speed</param>
                         </action>
+                        <action id="-1" name="Set X" sid="2259115152986573" type="Stickman">
+                            <param id="0" name="X">Self.X - Asteroid.Speed</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="9049926876868801">
@@ -175,7 +178,7 @@
                                     <param id="0" name="Object to create">AsteroidPoon</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="X">LayoutWidth + AsteroidPoon.Width + random(100, 500)</param>
-                                    <param id="3" name="Y">random(0, LayoutHeight - (AsteroidPoon.Height / 2))</param>
+                                    <param id="3" name="Y">random(300, LayoutHeight - (AsteroidPoon.Height / 2) - 300)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -195,6 +198,26 @@
                         <action id="-1" name="Set X" sid="4301330450895761" type="BackgroundSpace">
                             <param id="0" name="X">floor(Self.X - Self.Speed)</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9764018920870669">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="1844008183447598" type="Spaceship">
+                            <param id="0" name="Object">AsteroidPoon</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="3212380590522611" type="System">
+                            <param id="0" name="Object to create">Stickman</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">AsteroidPoon.X</param>
+                            <param id="3" name="Y">AsteroidPoon.Y</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="4201500597497809" type="Stickman">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="536934654316662" type="Stickman" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -264,6 +287,17 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="666443142087199" type="Asteroid" />
+                    </actions>
+                </event-block>
+                <event-block sid="8043550496949853">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="6936744611168589" type="Stickman">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">-Stickman.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6045484634157214" type="Stickman" />
                     </actions>
                 </event-block>
             </sub-events>
