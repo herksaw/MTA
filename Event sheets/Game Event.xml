@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
         <event-group description="" sid="7242745080238681" title="System">
             <sub-events>
                 <event-block sid="8728684888057143">
@@ -62,7 +63,93 @@
                         <action id="-1" name="Set X" sid="891682156928586" type="BackgroundSpace">
                             <param id="0" name="X">Self.X - Self.Speed</param>
                         </action>
+                        <action id="-1" name="Set X" sid="1562067723295286" type="Asteroid">
+                            <param id="0" name="X">Self.X - Self.Speed</param>
+                        </action>
                     </actions>
+                </event-block>
+                <event-block sid="4193027401749945">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="2378154164442559" type="System">
+                            <param id="0" name="Interval (seconds)">2.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7074716375455703" type="System">
+                            <param id="0" name="Variable">AsteroidVariation</param>
+                            <param id="1" name="Value">floor(random(0, 4))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6058086772804614">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1385796809592612" type="System">
+                                    <param id="0" name="Variable">AsteroidVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="4007870529500191" type="System">
+                                    <param id="0" name="Object to create">AsteroidLarge</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth + AsteroidLarge.Width + random(100, 500)</param>
+                                    <param id="3" name="Y">random(0, LayoutHeight - (AsteroidLarge.Height / 2))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5677197891534796">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1558399364325489" type="System">
+                                    <param id="0" name="Variable">AsteroidVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="8215382397016736" type="System">
+                                    <param id="0" name="Object to create">AsteroidMedium</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth + AsteroidMedium.Width + random(100, 500)</param>
+                                    <param id="3" name="Y">random(0, LayoutHeight - (AsteroidMedium.Height / 2))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1863272400680814">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9164633976311217" type="System">
+                                    <param id="0" name="Variable">AsteroidVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="9867139195801879" type="System">
+                                    <param id="0" name="Object to create">AsteroidPoon</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth + AsteroidPoon.Width + random(100, 500)</param>
+                                    <param id="3" name="Y">random(0, LayoutHeight - (AsteroidPoon.Height / 2))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4638150437503426">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3315886277796969" type="System">
+                                    <param id="0" name="Variable">AsteroidVariation</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1985598624481322" type="System">
+                                    <param id="0" name="Object to create">AsteroidSmall</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">LayoutWidth + AsteroidSmall.Width + random(100, 500)</param>
+                                    <param id="3" name="Y">random(0, LayoutHeight - (AsteroidSmall.Height / 2))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="9459109388590807">
                     <conditions>
@@ -102,6 +189,51 @@
                         <action behavior="Platform" id="9" name="Set vector Y" sid="960342423912742" type="Spaceship">
                             <param id="0" name="Vector Y">-500</param>
                         </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="6136297912486958" title="Collision">
+            <sub-events>
+                <event-block sid="9604272863496554">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="8592202067888082" type="Asteroid">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="8895111422373356" type="Asteroid">
+                            <param id="0" name="Y">Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2125831254099129">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="4246425463500091" type="Asteroid">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight - (Asteroid.Height / 2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="9510979518699798" type="Asteroid">
+                            <param id="0" name="Y">LayoutHeight - (Asteroid.Height / 2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="8330203186755227" title="Memory">
+            <sub-events>
+                <event-block sid="7734493257121643">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="8373152006381292" type="Asteroid">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">-Asteroid.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="666443142087199" type="Asteroid" />
                     </actions>
                 </event-block>
             </sub-events>

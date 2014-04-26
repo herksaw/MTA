@@ -21,5 +21,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1">
         <family expanded="0" name="Background" />
+        <family expanded="0" name="Asteroid" />
     </families-expanded>
 </c2uistate>

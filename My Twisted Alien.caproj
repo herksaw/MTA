@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build7</version>
+    <version>1.0a build8</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -83,6 +83,50 @@
         <object-type name="Browser" sid="1653193714110698">
             <plugin id="Browser" />
         </object-type>
+        <object-type name="AsteroidLarge" sid="8411128905137696">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1541729298088556" speed="5">
+                    <frame duration="1" hotspotX="0.500907" hotspotY="0.500873" />
+                    <frame duration="1" hotspotX="0.500873" hotspotY="0.500907" />
+                    <frame duration="1" hotspotX="0.500907" hotspotY="0.500873" />
+                    <frame duration="1" hotspotX="0.500873" hotspotY="0.500907" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AsteroidMedium" sid="6205650794062725">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="2016688081416924" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AsteroidSmall" sid="7140288757511567">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="135528740900528" speed="5">
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
+                    <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
+                    <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AsteroidPoon" sid="5774278019088286">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1429578655055541" speed="5">
+                    <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
+                    <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Background" plugin-id="Sprite" sid="678458441439113">
@@ -91,6 +135,17 @@
             </members>
             <instance-variables>
                 <instance-variable name="Speed" sid="52472363793716" type="number" />
+            </instance-variables>
+        </family>
+        <family name="Asteroid" plugin-id="Sprite" sid="7006327797671474">
+            <members>
+                <member>AsteroidLarge</member>
+                <member>AsteroidMedium</member>
+                <member>AsteroidPoon</member>
+                <member>AsteroidSmall</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Speed" sid="7694101136912259" type="number" />
             </instance-variables>
         </family>
     </families>
