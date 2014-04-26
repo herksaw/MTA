@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build9</version>
+    <version>1.0a build10</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -124,6 +124,36 @@
                     <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
                     <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
                     <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Stickman" sid="8102646765627735">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4267526163484299" speed="5">
+                    <frame duration="1" hotspotX="0.504" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="7492276392931659" speed="5">
+                    <frame duration="1" hotspotX="0.50193" hotspotY="0.5" />
+                </animation>
+                <animation framecount="3" loop="0" name="Die" pingpong="0" repeatcount="1" repeatto="0" sid="1479033560154453" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501845">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.498413" hotspotY="0.501961">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501362" hotspotY="0.506849" />
                 </animation>
             </animation-folder>
         </object-type>
