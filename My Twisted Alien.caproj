@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build11</version>
+    <version>1.0a build12</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -17,6 +17,7 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
     </used-behaviors>
@@ -54,6 +55,10 @@
         </object-type>
         <object-type name="Spaceship" sid="6772632223455184">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="startX" sid="5725053930195945" type="number" />
+                <instance-variable name="endX" sid="715288107182837" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="8644084547521546">
                     <behavior id="Platform" />
@@ -64,7 +69,9 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9490317451331638" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Spawn" x="1" y="0.5" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -157,6 +164,14 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Rocket" sid="854136258173938">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4979345186682032" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Background" plugin-id="Sprite" sid="678458441439113">
@@ -177,6 +192,16 @@
             <instance-variables>
                 <instance-variable name="Speed" sid="7694101136912259" type="number" />
             </instance-variables>
+        </family>
+        <family name="Weapon" plugin-id="Sprite" sid="5959992841284483">
+            <members>
+                <member>Rocket</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Bullet" sid="7605561100635838">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder expanded="1">

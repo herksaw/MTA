@@ -104,7 +104,7 @@
                 <event-block sid="4193027401749945">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="2378154164442559" type="System">
-                            <param id="0" name="Interval (seconds)">2.0</param>
+                            <param id="0" name="Interval (seconds)">random(1, 2)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -224,15 +224,80 @@
         </event-group>
         <event-group description="" sid="5250872597120368" title="Input">
             <sub-events>
+                <event-block sid="2812306150661084">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="208441032611037" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="395240263833396" type="Spaceship">
+                            <param id="0" name="Instance variable">startX</param>
+                            <param id="1" name="Value">Touch.X</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2960220384883707">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="5853648207474979" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6366309063630485" type="Spaceship">
+                            <param id="0" name="Instance variable">endX</param>
+                            <param id="1" name="Value">Touch.X</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7873036787720556">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5265354042615864" type="Spaceship">
+                                    <param id="0" name="Instance variable">startX</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">Spaceship.endX</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="7966549211546829" type="Spaceship">
+                                    <param id="0" name="Object">Rocket</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5690309200344475" type="Spaceship">
+                                    <param id="0" name="Instance variable">startX</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4310192432593052" type="Spaceship">
+                                    <param id="0" name="Instance variable">endX</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="2940497964546307">
                     <conditions>
                         <condition id="1" name="On any touch end" sid="1912706115045365" type="Touch" />
                     </conditions>
-                    <actions>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="8244135530209524" type="Spaceship">
-                            <param id="0" name="Vector Y">-500</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9791505512748771">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6396198568578436" type="Spaceship">
+                                    <param id="0" name="Instance variable">startX</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2296884361669857" type="Spaceship">
+                                    <param id="0" name="Instance variable">endX</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="8244135530209524" type="Spaceship">
+                                    <param id="0" name="Vector Y">-500</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="291466252372236">
                     <conditions>
