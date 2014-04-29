@@ -55,7 +55,7 @@
         </event-group>
         <event-group description="" sid="6253389085095574" title="Level">
             <sub-events>
-                <event-block sid="7051614135628308">
+                <event-block collapsed="1" sid="7051614135628308">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="361438989576911" type="System" />
                     </conditions>
@@ -68,6 +68,9 @@
                         </action>
                         <action id="-1" name="Set X" sid="2259115152986573" type="Stickman">
                             <param id="0" name="X">Self.X - Asteroid.Speed</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="4045845616148032" type="Text">
+                            <param id="0" name="X">Self.X - Self.speed</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -101,7 +104,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="4193027401749945">
+                <event-block collapsed="1" sid="4193027401749945">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="2378154164442559" type="System">
                             <param id="0" name="Interval (seconds)">random(1, 2)</param>
@@ -188,6 +191,23 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="7227163926781271">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="216915611789818" type="Spaceship">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="4122394023335378" type="Spaceship">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="258252016977623" type="Spaceship">
+                            <param id="0" name="Y">Self.Y + 10</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="9459109388590807">
                     <conditions>
                         <condition id="-1" name="Compare X" sid="2155406213240477" type="BackgroundSpace">
@@ -204,60 +224,24 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="9764018920870669">
+                <event-block sid="6490689095515329">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="1844008183447598" type="Spaceship">
-                            <param id="0" name="Object">AsteroidPoon</param>
+                        <condition id="-2" name="Compare Y" sid="2239734977434985" type="Spaceship">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight + (Spaceship.Height / 2)</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="5464340120365669" type="AsteroidPoon">
-                            <param id="0" name="Instance variable">isAlive</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="8958925661423132" type="Spaceship" />
                     </conditions>
                     <actions>
-                        <action behavior="Flash" id="0" name="Flash" sid="497242223998889" type="Spaceship">
-                            <param id="0" name="&apos;On&apos; time">0.1</param>
-                            <param id="1" name="&apos;Off&apos; time">0.1</param>
-                            <param id="2" name="Duration">1.0</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="3212380590522611" type="System">
-                            <param id="0" name="Object to create">Stickman</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="X">AsteroidPoon.X</param>
-                            <param id="3" name="Y">AsteroidPoon.Y</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="4201500597497809" type="Stickman">
-                            <param id="0" name="Animation">&quot;Attack&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="-29" name="Move to object" sid="536934654316662" type="Stickman">
-                            <param id="0" name="Where">1</param>
-                            <param id="1" name="Object">AsteroidPoon</param>
-                        </action>
+                        <action id="-9" name="Destroy" sid="6996861834064081" type="Spaceship" />
                     </actions>
                 </event-block>
-                <event-block sid="1060927310728127">
+                <event-block sid="1681649900615851">
                     <conditions>
-                        <condition id="2" name="Is playing" sid="3869785138364161" type="Stickman">
-                            <param id="0" name="Animation">&quot;Attack&quot;</param>
-                        </condition>
-                        <condition id="1" inverted="1" name="Is overlapping another object" sid="7655763172952381" type="Stickman">
-                            <param id="0" name="Object">Spaceship</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="1991209435651476" type="Stickman">
-                            <param id="0" name="Instance variable">isDied</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
+                        <condition id="-19" name="On destroyed" sid="5330762307232131" type="Spaceship" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="9867621073691293" type="Stickman">
-                            <param id="0" name="Instance variable">isDied</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="4791354313518075" type="Stickman" />
+                        <action id="-21" name="Reset global variables" sid="6535226805246584" type="System" />
+                        <action id="-26" name="Restart layout" sid="7503742759584297" type="System" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -291,7 +275,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="5265354042615864" type="Spaceship">
                                     <param id="0" name="Instance variable">startX</param>
                                     <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">Spaceship.endX</param>
+                                    <param id="2" name="Value">Spaceship.endX - 400</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -343,6 +327,24 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="3997226471438086">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="9276245817012179" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="3927915593563036" type="Spaceship">
+                            <param id="0" name="Object">Rocket</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="896183595668563" type="Rocket">
+                            <param id="0" name="Speed">Self.Speed</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="9130312647763544" type="Rocket" />
+                    </actions>
+                </event-block>
                 <event-block sid="291466252372236">
                     <conditions>
                         <condition id="1" name="On any key pressed" sid="107164646572773" type="Keyboard" />
@@ -383,6 +385,19 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="7711521333297781">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="8542877663767593" type="Spaceship">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">Self.Height / 2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="7677373895550442" type="Spaceship">
+                            <param id="0" name="Y">Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="9676571158210543">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="1782652989273478" type="Rocket">
@@ -393,8 +408,26 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;&quot;</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7181632740017794" type="Asteroid">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Spawn another object" sid="4777325556041393" type="Asteroid">
+                            <param id="0" name="Object">TextBam</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5795526948016777" type="TextBam">
+                            <param id="0" name="X">Asteroid.X</param>
+                            <param id="1" name="Y">Asteroid.Y - (Asteroid.Height / 2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5480876012989818" type="Asteroid">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="2751492352157837" type="Rocket" />
                         <action behavior="Fade" id="1" name="Start fade" sid="3342763817394939" type="Asteroid" />
                     </actions>
@@ -409,8 +442,22 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;poon&quot;</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3011519834686132" type="Asteroid">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Spawn another object" sid="8716690214568383" type="Asteroid">
+                            <param id="0" name="Object">TextBam</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="9841897804435708" type="TextBam">
+                            <param id="0" name="X">Asteroid.X</param>
+                            <param id="1" name="Y">Asteroid.Y - (Asteroid.Height / 2)</param>
+                        </action>
                         <action id="-10" name="Set value" sid="5822562556845912" type="Asteroid">
                             <param id="0" name="Instance variable">isAlive</param>
                             <param id="1" name="Value">0</param>
@@ -431,6 +478,109 @@
                         </action>
                         <action id="-9" name="Destroy" sid="9592478605039171" type="Rocket" />
                         <action behavior="Fade" id="1" name="Start fade" sid="9381293653842324" type="Asteroid" />
+                    </actions>
+                </event-block>
+                <event-block sid="3924590778385229">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="1880680259869804" type="Spaceship">
+                            <param id="0" name="Object">Asteroid</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6533804987182235" type="Asteroid">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3567012710708388" type="Asteroid">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="114465014629091" type="Spaceship" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="5797814591687124" type="Spaceship">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3800497424648332" type="Spaceship">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4680162785067516">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9881962295705576" type="Spaceship">
+                            <param id="0" name="Object">Asteroid</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3250680370760445" type="Asteroid">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;poon&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2970908834941207" type="Asteroid">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="9594051892063996" type="Spaceship" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="8451044570235391" type="Asteroid">
+                            <param id="0" name="Object">TextPoontang</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="8903394536957322" type="TextPoontang">
+                            <param id="0" name="X">Asteroid.X</param>
+                            <param id="1" name="Y">Asteroid.Y - (Asteroid.Height / 2)</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="4615063051417454" type="Spaceship">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9854131806732853" type="System">
+                            <param id="0" name="Object to create">Stickman</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Asteroid.X</param>
+                            <param id="3" name="Y">Asteroid.Y</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="1841719801174607" type="Stickman">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="9344472738981581" type="Stickman">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Asteroid</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3080976358539271" type="Spaceship">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2221931624002741">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="1052070555376505" type="Stickman">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="25308980127372" type="Stickman">
+                            <param id="0" name="Object">Spaceship</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4833568684685307" type="Stickman">
+                            <param id="0" name="Instance variable">isDied</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2804034735919681" type="Stickman">
+                            <param id="0" name="Instance variable">isDied</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="1217021696436074" type="Stickman" />
                     </actions>
                 </event-block>
             </sub-events>

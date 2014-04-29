@@ -2,13 +2,13 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build13</version>
+    <version>1.0a build17</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
     <app-id>com.lorenzalo.mta</app-id>
     <unique-id>mn98u368cl11</unique-id>
-    <saved-with-version>16500</saved-with-version>
+    <saved-with-version>16800</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -21,7 +21,6 @@
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -60,13 +59,11 @@
             <instance-variables>
                 <instance-variable name="startX" sid="5725053930195945" type="number" />
                 <instance-variable name="endX" sid="715288107182837" type="number" />
+                <instance-variable name="isAlive" sid="8619571346168948" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="8644084547521546">
                     <behavior id="Platform" />
-                </behavior-type>
-                <behavior-type name="BoundToLayout" sid="908902711628912">
-                    <behavior id="bound" />
                 </behavior-type>
                 <behavior-type name="Flash" sid="9021416255068817">
                     <behavior id="Flash" />
@@ -185,6 +182,30 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="TextBam" sid="4326526090744358">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1381714062434711" speed="5">
+                    <frame duration="1" hotspotX="0.50289" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextSweet" sid="3519498591783298">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1651880137964884" speed="5">
+                    <frame duration="1" hotspotX="0.502183" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextPoontang" sid="9449750300903558">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2189321686726759" speed="5">
+                    <frame duration="1" hotspotX="0.501475" hotspotY="0.509091" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Background" plugin-id="Sprite" sid="678458441439113">
@@ -223,6 +244,21 @@
             <behaviors>
                 <behavior-type name="Bullet" sid="7605561100635838">
                     <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Text" plugin-id="Sprite" sid="7247554048479087">
+            <members>
+                <member>TextBam</member>
+                <member>TextPoontang</member>
+                <member>TextSweet</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="speed" sid="4949888809539737" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="2728809217999189">
+                    <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
         </family>
