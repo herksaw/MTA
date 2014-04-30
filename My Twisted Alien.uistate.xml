@@ -23,6 +23,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="Background" />
         <family expanded="0" name="Asteroid" />
         <family expanded="0" name="Weapon" />
-        <family expanded="0" name="Text" />
+        <family expanded="0" name="TextGame" />
     </families-expanded>
 </c2uistate>

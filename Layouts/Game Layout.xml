@@ -201,6 +201,7 @@
                         <speed>10</speed>
                         <type></type>
                         <isAlive>1</isAlive>
+                        <isAvoided>0</isAvoided>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Fade">
@@ -239,6 +240,7 @@
                         <speed>10</speed>
                         <type></type>
                         <isAlive>1</isAlive>
+                        <isAvoided>0</isAvoided>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Fade">
@@ -277,6 +279,7 @@
                         <speed>10</speed>
                         <type></type>
                         <isAlive>1</isAlive>
+                        <isAvoided>0</isAvoided>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Fade">
@@ -315,6 +318,7 @@
                         <speed>10</speed>
                         <type></type>
                         <isAlive>1</isAlive>
+                        <isAvoided>0</isAvoided>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Fade">
@@ -519,6 +523,33 @@
                         <depth>0</depth>
                         <hotspotX>0.501474917</hotspotX>
                         <hotspotY>0.5090909</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BoxDebug" uid="18">
+                    <properties>
+                        <text>Debug</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-80,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>750</x>
+                        <y>60</y>
+                        <z>0</z>
+                        <width>1500</width>
+                        <height>120</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
