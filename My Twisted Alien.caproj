@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build20</version>
+    <version>1.0a build21</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -315,9 +315,9 @@
         </global-instance>
     </global-instances>
     <sounds-folder expanded="1">
-        <file name="poontang.m4a" />
-        <file name="poontang.ogg" />
-        <file name="poontang.wav" />
+        <file name="big_bomb.m4a" />
+        <file name="big_bomb.ogg" />
+        <file name="big_bomb.wav" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">

@@ -15,8 +15,8 @@
                         <condition id="-2" name="On start of layout" sid="5002268626205124" type="System" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Preload" sid="3304819101099088" type="Audio">
-                            <param id="0" name="Audio file">poontang</param>
+                        <action id="4" name="Preload" sid="6031012741898881" type="Audio">
+                            <param id="0" name="Audio file">big_bomb</param>
                         </action>
                     </actions>
                 </event-block>
@@ -638,10 +638,10 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="1309304671229172" type="Audio">
-                            <param id="0" name="Audio file">poontang</param>
+                            <param id="0" name="Audio file">big_bomb</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">10</param>
-                            <param id="1" name="Tag (optional)">&quot;poontang&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;big_bomb&quot;</param>
                         </action>
                         <action id="0" name="Spawn another object" sid="8451044570235391" type="Asteroid">
                             <param id="0" name="Object">TextPoontang</param>
