@@ -26,7 +26,7 @@
                             <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                         </action>
                         <action id="0" name="Set text" sid="4459486761762558" type="BoxDebug">
-                            <param id="0" name="Text">&quot;Lives left: &quot; &amp; Spaceship.live &amp; &quot; Missiles: &quot; &amp; Spaceship.missile &amp; &quot; Killed: &quot; &amp; Spaceship.killedPoontang &amp; &quot; Points needed: &quot; &amp; WebStorage.LocalValue(&quot;points&quot;)</param>
+                            <param id="0" name="Text">&quot;Lives left: &quot; &amp; Spaceship.live &amp; &quot; Missiles: &quot; &amp; Spaceship.missile &amp; &quot; Killed: &quot; &amp; Spaceship.killedPoontang &amp; &quot; Points: &quot; &amp; WebStorage.LocalValue(&quot;points&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
