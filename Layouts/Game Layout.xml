@@ -119,7 +119,7 @@
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
                                 <gravity>1500</gravity>
-                                <max-fall-speed>600</max-fall-speed>
+                                <max-fall-speed>1000</max-fall-speed>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
@@ -145,7 +145,7 @@
                     <properties>
                         <text>No update found.</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-80,400,0</font>
+                        <font>Arial,-53,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -157,10 +157,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>400</x>
-                        <y>1380</y>
+                        <y>1400</y>
                         <z>0</z>
                         <width>800</width>
-                        <height>120</height>
+                        <height>80</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -172,7 +172,7 @@
                     <properties>
                         <text>Version</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-80,400,0</font>
+                        <font>Arial,-53,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -184,10 +184,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1200</x>
-                        <y>1380</y>
+                        <y>1400</y>
                         <z>0</z>
                         <width>800</width>
-                        <height>120</height>
+                        <height>80</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -536,7 +536,7 @@
                     <properties>
                         <text>Debug</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-80,400,0</font>
+                        <font>Arial,-53,400,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -548,10 +548,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1000</x>
-                        <y>60</y>
+                        <y>40</y>
                         <z>0</z>
                         <width>2000</width>
-                        <height>120</height>
+                        <height>80</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

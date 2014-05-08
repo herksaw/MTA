@@ -3,12 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
-        <variable constant="0" name="Points" sid="31024598051248" static="0" type="number">0</variable>
-        <variable constant="0" name="KilledPoontang" sid="8854337231961745" static="0" type="number">0</variable>
-        <variable constant="0" name="LeftMissile" sid="5383828758888793" static="0" type="number">0</variable>
         <variable constant="0" name="IsPaused" sid="1201803636252143" static="0" type="number">0</variable>
         <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="" sid="7242745080238681" title="System">
+        <event-group description="" sid="7242745080238681" title="System">
             <sub-events>
                 <event-block sid="7492774530184119">
                     <conditions>
@@ -29,7 +26,7 @@
                             <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                         </action>
                         <action id="0" name="Set text" sid="4459486761762558" type="BoxDebug">
-                            <param id="0" name="Text">&quot;Lives left: &quot; &amp; Spaceship.live &amp; &quot; Missiles: &quot; &amp; Spaceship.missile &amp; &quot; Killed: &quot; &amp; Spaceship.killedPoontang &amp; &quot; Points needed: &quot; &amp; Spaceship.points</param>
+                            <param id="0" name="Text">&quot;Lives left: &quot; &amp; Spaceship.live &amp; &quot; Missiles: &quot; &amp; Spaceship.missile &amp; &quot; Killed: &quot; &amp; Spaceship.killedPoontang &amp; &quot; Points needed: &quot; &amp; WebStorage.LocalValue(&quot;points&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -66,6 +63,19 @@
                         </action>
                         <action id="-21" name="Reset global variables" sid="9260041274936873" type="System" />
                         <action id="-26" name="Restart layout" sid="6785285002806866" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="9628868175426146">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="3137398766670928" type="WebStorage">
+                            <param id="0" name="Key">&quot;points&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6714829652775537" type="WebStorage">
+                            <param id="0" name="Key">&quot;points&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -549,9 +559,13 @@
                             <param id="0" name="Instance variable">isAvoided</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-11" name="Add to" sid="3895001989494796" type="Spaceship">
+                        <action disabled="1" id="-11" name="Add to" sid="3895001989494796" type="Spaceship">
                             <param id="0" name="Instance variable">points</param>
                             <param id="1" name="Value">50</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="3309352741843159" type="WebStorage">
+                            <param id="0" name="Key">&quot;points&quot;</param>
+                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;points&quot;)) + 50</param>
                         </action>
                     </actions>
                 </event-block>
@@ -684,9 +698,13 @@
                             <param id="0" name="Instance variable">killedPoontang</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-11" name="Add to" sid="7703486703712897" type="Spaceship">
+                        <action disabled="1" id="-11" name="Add to" sid="7703486703712897" type="Spaceship">
                             <param id="0" name="Instance variable">points</param>
                             <param id="1" name="Value">200</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="1512945277091759" type="WebStorage">
+                            <param id="0" name="Key">&quot;points&quot;</param>
+                            <param id="1" name="Value">int(WebStorage.LocalValue(&quot;points&quot;)) + 200</param>
                         </action>
                     </actions>
                 </event-block>

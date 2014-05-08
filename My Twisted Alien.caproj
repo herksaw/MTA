@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build24</version>
+    <version>1.0a build25</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -231,6 +232,9 @@
         <object-type name="BoxDebug" sid="3279226786748065">
             <plugin id="Text" />
         </object-type>
+        <object-type name="WebStorage" sid="2680848678712031">
+            <plugin id="WebStorage" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Background" plugin-id="Sprite" sid="678458441439113">
@@ -318,6 +322,7 @@
                 <doppler-factor>1</doppler-factor>
             </properties>
         </global-instance>
+        <global-instance type="WebStorage" uid="19" />
     </global-instances>
     <sounds-folder expanded="1">
         <file name="big_bomb.m4a" />
