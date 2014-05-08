@@ -3,19 +3,19 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
-        <variable constant="0" name="DebugPoints" sid="31024598051248" static="0" type="number">0</variable>
-        <variable constant="0" name="DebugPoontang" sid="8854337231961745" static="0" type="number">0</variable>
-        <variable constant="0" name="DebugMissile" sid="5383828758888793" static="0" type="number">0</variable>
+        <variable constant="0" name="Points" sid="31024598051248" static="0" type="number">0</variable>
+        <variable constant="0" name="KilledPoontang" sid="8854337231961745" static="0" type="number">0</variable>
+        <variable constant="0" name="LeftMissile" sid="5383828758888793" static="0" type="number">0</variable>
         <variable constant="0" name="IsPaused" sid="1201803636252143" static="0" type="number">0</variable>
         <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
-        <event-group description="" sid="7242745080238681" title="System">
+        <event-group collapsed="1" description="" sid="7242745080238681" title="System">
             <sub-events>
                 <event-block sid="7492774530184119">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="5002268626205124" type="System" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Preload" sid="6031012741898881" type="Audio">
+                        <action disabled="1" id="4" name="Preload" sid="6031012741898881" type="Audio">
                             <param id="0" name="Audio file">big_bomb</param>
                         </action>
                     </actions>
@@ -29,7 +29,7 @@
                             <param id="0" name="Text">&quot;Version: &quot; &amp; projectversion</param>
                         </action>
                         <action id="0" name="Set text" sid="4459486761762558" type="BoxDebug">
-                            <param id="0" name="Text">&quot;Missile: &quot; &amp; DebugMissile &amp; &quot; Killed: &quot; &amp; DebugPoontang &amp; &quot; Points: &quot; &amp; DebugPoints</param>
+                            <param id="0" name="Text">&quot;Lives left: &quot; &amp; Spaceship.live &amp; &quot; Missiles: &quot; &amp; Spaceship.missile &amp; &quot; Killed: &quot; &amp; Spaceship.killedPoontang &amp; &quot; Points needed: &quot; &amp; Spaceship.points</param>
                         </action>
                     </actions>
                 </event-block>
@@ -72,7 +72,7 @@
         </event-group>
         <event-group description="" sid="6253389085095574" title="Level">
             <sub-events>
-                <event-block sid="7051614135628308">
+                <event-block collapsed="1" sid="7051614135628308">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="361438989576911" type="System" />
                         <condition id="-14" name="Compare variable" sid="5044827535463692" type="System">
@@ -138,7 +138,35 @@
                         <action id="2" name="Stop" sid="314201019110702" type="Asteroid" />
                     </actions>
                 </event-block>
-                <event-block sid="4193027401749945">
+                <event-block sid="6225732267050971">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="2997772765682683" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4030428703115689">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1991903794850807" type="Spaceship">
+                                    <param id="0" name="Instance variable">timer</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="6857789268039323" type="Spaceship">
+                                    <param id="0" name="Instance variable">timer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="739996165394966" type="Spaceship">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block collapsed="1" sid="4193027401749945">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="2378154164442559" type="System">
                             <param id="0" name="Interval (seconds)">random(1, 2)</param>
@@ -264,9 +292,42 @@
                             <param id="0" name="Comparison">5</param>
                             <param id="1" name="Y co-ordinate">LayoutHeight + (Spaceship.Height / 2)</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2222625026978668" type="Spaceship">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="6996861834064081" type="Spaceship" />
+                    </actions>
+                </event-block>
+                <event-block sid="7970760758497684">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="8061853035330834" type="Spaceship">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight + (Spaceship.Height / 2)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3466572510140628" type="Spaceship">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="7639890700793853" type="Spaceship">
+                            <param id="0" name="X">LayoutWidth / 2</param>
+                            <param id="1" name="Y">LayoutHeight / 2</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="8185944667857883" type="Spaceship">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7256329848500305" type="Spaceship">
+                            <param id="0" name="Instance variable">live</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1681649900615851">
@@ -282,7 +343,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5250872597120368" title="Input">
+        <event-group collapsed="1" description="" sid="5250872597120368" title="Input">
             <sub-events>
                 <event-block sid="4827355653838829">
                     <conditions>
@@ -356,8 +417,15 @@
                                     <param id="0" name="Speed">Self.Speed</param>
                                 </action>
                                 <action id="-24" name="Move to top" sid="1606057787929465" type="Rocket" />
-                                <action id="-10" name="Add to" sid="6238945992591198" type="System">
-                                    <param id="0" name="Variable">DebugMissile</param>
+                                <action id="-12" name="Subtract from" sid="3353753348330644" type="Spaceship">
+                                    <param id="0" name="Instance variable">missile</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="6277268377608998" type="Spaceship">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3822110230514458" type="Spaceship">
+                                    <param id="0" name="Instance variable">timer</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
@@ -392,6 +460,13 @@
                                 <action behavior="Platform" id="9" name="Set vector Y" sid="8244135530209524" type="Spaceship">
                                     <param id="0" name="Vector Y">-500</param>
                                 </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="4649329857112742" type="Spaceship">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1010211363564146" type="Spaceship">
+                                    <param id="0" name="Instance variable">timer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -417,8 +492,15 @@
                             <param id="0" name="Speed">Self.Speed</param>
                         </action>
                         <action id="-24" name="Move to top" sid="9130312647763544" type="Rocket" />
-                        <action id="-10" name="Add to" sid="4975963164511978" type="System">
-                            <param id="0" name="Variable">DebugMissile</param>
+                        <action id="-12" name="Subtract from" sid="9280567314824364" type="Spaceship">
+                            <param id="0" name="Instance variable">missile</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="7779351920852394" type="Spaceship">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8427072409915477" type="Spaceship">
+                            <param id="0" name="Instance variable">timer</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
@@ -426,6 +508,9 @@
                 <event-block sid="291466252372236">
                     <conditions>
                         <condition id="1" name="On any key pressed" sid="107164646572773" type="Keyboard" />
+                        <condition id="2" inverted="1" name="Key is down" sid="1205284831203835" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
                         <condition id="-14" name="Compare variable" sid="9405804964704612" type="System">
                             <param id="0" name="Variable">IsPaused</param>
                             <param id="1" name="Comparison">0</param>
@@ -464,8 +549,8 @@
                             <param id="0" name="Instance variable">isAvoided</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-10" name="Add to" sid="3895001989494796" type="System">
-                            <param id="0" name="Variable">DebugPoints</param>
+                        <action id="-11" name="Add to" sid="3895001989494796" type="Spaceship">
+                            <param id="0" name="Instance variable">points</param>
                             <param id="1" name="Value">50</param>
                         </action>
                     </actions>
@@ -506,6 +591,21 @@
                     <actions>
                         <action id="-2" name="Set Y" sid="7677373895550442" type="Spaceship">
                             <param id="0" name="Y">Self.Height / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9207407351922527">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2375323743371688" type="Spaceship">
+                            <param id="0" name="Instance variable">live</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="3800497424648332" type="Spaceship">
+                            <param id="0" name="Instance variable">isAlive</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -580,12 +680,12 @@
                         </action>
                         <action id="-9" name="Destroy" sid="9592478605039171" type="Rocket" />
                         <action behavior="Fade" id="1" name="Start fade" sid="9381293653842324" type="Asteroid" />
-                        <action id="-10" name="Add to" sid="5363122128107539" type="System">
-                            <param id="0" name="Variable">DebugPoontang</param>
+                        <action id="-11" name="Add to" sid="5363122128107539" type="Spaceship">
+                            <param id="0" name="Instance variable">killedPoontang</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-10" name="Add to" sid="4641758825012054" type="System">
-                            <param id="0" name="Variable">DebugPoints</param>
+                        <action id="-11" name="Add to" sid="7703486703712897" type="Spaceship">
+                            <param id="0" name="Instance variable">points</param>
                             <param id="1" name="Value">200</param>
                         </action>
                     </actions>
@@ -613,9 +713,9 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">1.0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="3800497424648332" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
-                            <param id="1" name="Value">0</param>
+                        <action id="-12" name="Subtract from" sid="915466668579522" type="Spaceship">
+                            <param id="0" name="Instance variable">live</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -637,7 +737,7 @@
                         <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="9594051892063996" type="Spaceship" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="1309304671229172" type="Audio">
+                        <action disabled="1" id="0" name="Play" sid="1309304671229172" type="Audio">
                             <param id="0" name="Audio file">big_bomb</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">10</param>
@@ -671,9 +771,9 @@
                             <param id="0" name="Where">1</param>
                             <param id="1" name="Object">Asteroid</param>
                         </action>
-                        <action id="-10" name="Set value" sid="3080976358539271" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
-                            <param id="1" name="Value">0</param>
+                        <action id="-12" name="Subtract from" sid="6229301781553765" type="Spaceship">
+                            <param id="0" name="Instance variable">live</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -701,7 +801,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="8330203186755227" title="Memory">
+        <event-group collapsed="1" description="" sid="8330203186755227" title="Memory">
             <sub-events>
                 <event-block sid="7734493257121643">
                     <conditions>

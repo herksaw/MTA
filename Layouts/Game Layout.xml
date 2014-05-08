@@ -105,16 +105,21 @@
                         <startX>0</startX>
                         <endX>0</endX>
                         <isAlive>1</isAlive>
+                        <timer>1</timer>
+                        <missile>40</missile>
+                        <live>3</live>
+                        <killedPoontang>0</killedPoontang>
+                        <points>0</points>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>300</max-speed>
+                                <max-speed>0</max-speed>
                                 <acceleration>1500</acceleration>
                                 <deceleration>1500</deceleration>
                                 <jump-strength>650</jump-strength>
                                 <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
+                                <max-fall-speed>600</max-fall-speed>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
@@ -542,10 +547,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>750</x>
+                        <x>1000</x>
                         <y>60</y>
                         <z>0</z>
-                        <width>1500</width>
+                        <width>2000</width>
                         <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>

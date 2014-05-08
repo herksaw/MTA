@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build21</version>
+    <version>1.0a build24</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -61,6 +61,11 @@
                 <instance-variable name="startX" sid="5725053930195945" type="number" />
                 <instance-variable name="endX" sid="715288107182837" type="number" />
                 <instance-variable name="isAlive" sid="8619571346168948" type="number" />
+                <instance-variable name="timer" sid="1455932000239655" type="number" />
+                <instance-variable name="missile" sid="2675092369626675" type="number" />
+                <instance-variable name="live" sid="5605919248364446" type="number" />
+                <instance-variable name="killedPoontang" sid="3384420009403663" type="number" />
+                <instance-variable name="points" sid="2907795045377226" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="8644084547521546">
