@@ -353,7 +353,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5250872597120368" title="Input">
+        <event-group description="" sid="5250872597120368" title="Input">
             <sub-events>
                 <event-block sid="4827355653838829">
                     <conditions>
@@ -469,9 +469,6 @@
                             <actions>
                                 <action behavior="Platform" id="9" name="Set vector Y" sid="8244135530209524" type="Spaceship">
                                     <param id="0" name="Vector Y">-500</param>
-                                </action>
-                                <action behavior="Platform" id="11" name="Set enabled" sid="4649329857112742" type="Spaceship">
-                                    <param id="0" name="State">0</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="1010211363564146" type="Spaceship">
                                     <param id="0" name="Instance variable">timer</param>
