@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build27</version>
+    <version>1.0a build28</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -295,6 +295,7 @@
     </families>
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
+        <layout>Spawn Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>

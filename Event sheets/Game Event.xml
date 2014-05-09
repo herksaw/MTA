@@ -16,6 +16,34 @@
                             <param id="0" name="Audio file">big_bomb</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="9628868175426146">
+                            <conditions>
+                                <condition id="3" inverted="1" name="Local key exists" sid="3137398766670928" type="WebStorage">
+                                    <param id="0" name="Key">&quot;points&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="6714829652775537" type="WebStorage">
+                                    <param id="0" name="Key">&quot;points&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2998828806862414">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="8089056800387752" type="WebStorage">
+                                    <param id="0" name="Key">&quot;points&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="6405123491407253" type="WebStorage">
+                                    <param id="0" name="Key">&quot;points&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="8728684888057143">
                     <conditions>
@@ -63,19 +91,6 @@
                         </action>
                         <action id="-21" name="Reset global variables" sid="9260041274936873" type="System" />
                         <action id="-26" name="Restart layout" sid="6785285002806866" type="System" />
-                    </actions>
-                </event-block>
-                <event-block sid="9628868175426146">
-                    <conditions>
-                        <condition id="3" inverted="1" name="Local key exists" sid="3137398766670928" type="WebStorage">
-                            <param id="0" name="Key">&quot;points&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set local value" sid="6714829652775537" type="WebStorage">
-                            <param id="0" name="Key">&quot;points&quot;</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>
