@@ -12,8 +12,8 @@
                         <condition id="-2" name="On start of layout" sid="5002268626205124" type="System" />
                     </conditions>
                     <actions>
-                        <action disabled="1" id="4" name="Preload" sid="6031012741898881" type="Audio">
-                            <param id="0" name="Audio file">big_bomb</param>
+                        <action id="4" name="Preload" sid="6031012741898881" type="Audio">
+                            <param id="0" name="Audio file">laugh</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -571,10 +571,6 @@
                             <param id="0" name="Instance variable">isAvoided</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action disabled="1" id="-11" name="Add to" sid="3895001989494796" type="Spaceship">
-                            <param id="0" name="Instance variable">points</param>
-                            <param id="1" name="Value">50</param>
-                        </action>
                         <action id="0" name="Set local value" sid="3309352741843159" type="WebStorage">
                             <param id="0" name="Key">&quot;points&quot;</param>
                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;points&quot;)) + 50</param>
@@ -710,10 +706,6 @@
                             <param id="0" name="Instance variable">killedPoontang</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action disabled="1" id="-11" name="Add to" sid="7703486703712897" type="Spaceship">
-                            <param id="0" name="Instance variable">points</param>
-                            <param id="1" name="Value">200</param>
-                        </action>
                         <action id="0" name="Set local value" sid="1512945277091759" type="WebStorage">
                             <param id="0" name="Key">&quot;points&quot;</param>
                             <param id="1" name="Value">int(WebStorage.LocalValue(&quot;points&quot;)) + 200</param>
@@ -767,11 +759,11 @@
                         <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="9594051892063996" type="Spaceship" />
                     </conditions>
                     <actions>
-                        <action disabled="1" id="0" name="Play" sid="1309304671229172" type="Audio">
-                            <param id="0" name="Audio file">big_bomb</param>
+                        <action id="0" name="Play" sid="1309304671229172" type="Audio">
+                            <param id="0" name="Audio file">laugh</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">10</param>
-                            <param id="1" name="Tag (optional)">&quot;big_bomb&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;laugh&quot;</param>
                         </action>
                         <action id="0" name="Spawn another object" sid="8451044570235391" type="Asteroid">
                             <param id="0" name="Object">TextPoontang</param>

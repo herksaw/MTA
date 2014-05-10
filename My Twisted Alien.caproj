@@ -148,11 +148,10 @@
         <object-type name="AsteroidPoon" sid="5774278019088286">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1429578655055541" speed="5">
-                    <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
-                    <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
-                    <frame duration="1" hotspotX="0.505263" hotspotY="0.505495" />
-                    <frame duration="1" hotspotX="0.505495" hotspotY="0.505263" />
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="1429578655055541" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -329,6 +328,9 @@
         <file name="big_bomb.m4a" />
         <file name="big_bomb.ogg" />
         <file name="big_bomb.wav" />
+        <file name="laugh.m4a" />
+        <file name="laugh.ogg" />
+        <file name="laugh.wav" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">

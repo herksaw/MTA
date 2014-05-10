@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1399618352
+#1399705412
 index.html
 c2runtime.js
 jquery-2.0.0.min.js
@@ -11,6 +11,8 @@ images\asteroidmedium-sheet1.png
 images\asteroidsmall-sheet0.png
 images\asteroidsmall-sheet1.png
 images\asteroidpoon-sheet0.png
+images\asteroidpoon-sheet1.png
+images\asteroidpoon-sheet2.png
 images\stickman-sheet0.png
 images\stickman-sheet1.png
 images\rocket-sheet0.png
@@ -19,6 +21,8 @@ images\textsweet-sheet0.png
 images\textpoontang-sheet0.png
 media\big_bomb.m4a
 media\big_bomb.ogg
+media\laugh.m4a
+media\laugh.ogg
 icon-16.png
 icon-32.png
 icon-114.png
