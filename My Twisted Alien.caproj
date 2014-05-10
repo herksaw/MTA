@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build29</version>
+    <version>1.0a build30</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -233,6 +233,9 @@
         </object-type>
         <object-type name="WebStorage" sid="2680848678712031">
             <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="BoxTargetPoints" sid="4263968860588365">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families>
