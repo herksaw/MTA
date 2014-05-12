@@ -106,7 +106,7 @@
                         <endX>0</endX>
                         <isAlive>1</isAlive>
                         <timer>1</timer>
-                        <missile>4</missile>
+                        <missile>3</missile>
                         <live>3</live>
                         <killedPoontang>0</killedPoontang>
                         <points>0</points>

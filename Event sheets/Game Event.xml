@@ -5,7 +5,7 @@
     <events>
         <variable constant="0" name="IsPaused" sid="1201803636252143" static="0" type="number">0</variable>
         <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
-        <event-group description="" sid="7242745080238681" title="System">
+        <event-group collapsed="1" description="" sid="7242745080238681" title="System">
             <sub-events>
                 <event-block sid="7492774530184119">
                     <conditions>
@@ -98,7 +98,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6253389085095574" title="Level">
+        <event-group description="" sid="6253389085095574" title="Level">
             <sub-events>
                 <event-block collapsed="1" sid="7051614135628308">
                     <conditions>
@@ -121,6 +121,9 @@
                         </action>
                         <action id="-1" name="Set X" sid="4045845616148032" type="TextGame">
                             <param id="0" name="X">Self.X - Self.speed</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="960767713039958" type="Rocket">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -164,6 +167,9 @@
                     </conditions>
                     <actions>
                         <action id="2" name="Stop" sid="314201019110702" type="Asteroid" />
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="1269767222186553" type="Rocket">
+                            <param id="0" name="State">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="6225732267050971">
@@ -371,7 +377,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="5250872597120368" title="Input">
+        <event-group collapsed="1" description="" sid="5250872597120368" title="Input">
             <sub-events>
                 <event-block sid="4827355653838829">
                     <conditions>
