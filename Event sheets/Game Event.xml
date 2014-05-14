@@ -3,9 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="IsPlayerAlive" sid="354701535779683" static="0" type="number">1</variable>
         <variable constant="0" name="IsPaused" sid="1201803636252143" static="0" type="number">0</variable>
         <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="" sid="7242745080238681" title="System">
+        <event-group description="" sid="7242745080238681" title="System">
             <sub-events>
                 <event-block sid="7492774530184119">
                     <conditions>
@@ -14,6 +15,16 @@
                     <actions>
                         <action id="4" name="Preload" sid="6031012741898881" type="Audio">
                             <param id="0" name="Audio file">laugh</param>
+                        </action>
+                        <action id="4" name="Preload" sid="3842001775617997" type="Audio">
+                            <param id="0" name="Audio file">missile</param>
+                        </action>
+                        <action id="4" name="Preload" sid="3285322384389473" type="Audio">
+                            <param id="0" name="Audio file">scream</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2673973655808884" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -157,6 +168,25 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="1460016023790867">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6226699956900417" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1631473975975541" type="Spaceship">
+                            <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="5330190236194406" type="Spaceship">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="8726595324155344">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="9465513327416749" type="System">
@@ -168,6 +198,9 @@
                     <actions>
                         <action id="2" name="Stop" sid="314201019110702" type="Asteroid" />
                         <action behavior="Bullet" id="5" name="Set enabled" sid="1269767222186553" type="Rocket">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="7410258530489044" type="Spaceship">
                             <param id="0" name="State">0</param>
                         </action>
                     </actions>
@@ -289,8 +322,8 @@
                 </event-block>
                 <event-block sid="7227163926781271">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="216915611789818" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
+                        <condition id="-14" name="Compare variable" sid="119599566429362" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
@@ -326,8 +359,8 @@
                             <param id="0" name="Comparison">5</param>
                             <param id="1" name="Y co-ordinate">LayoutHeight + (Spaceship.Height / 2)</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="2222625026978668" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
+                        <condition id="-14" name="Compare variable" sid="893929338031766" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
@@ -342,8 +375,8 @@
                             <param id="0" name="Comparison">5</param>
                             <param id="1" name="Y co-ordinate">LayoutHeight + (Spaceship.Height / 2)</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="3466572510140628" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
+                        <condition id="-14" name="Compare variable" sid="4955390205049796" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
@@ -377,7 +410,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="5250872597120368" title="Input">
+        <event-group description="" sid="5250872597120368" title="Input">
             <sub-events>
                 <event-block sid="4827355653838829">
                     <conditions>
@@ -387,10 +420,34 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="3375031685305104" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-21" name="Reset global variables" sid="6535226805246584" type="System" />
                         <action id="-26" name="Restart layout" sid="7503742759584297" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="7733012168435723">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="7505556748594296" type="Keyboard" />
+                        <condition id="-14" name="Compare variable" sid="3268065054762331" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1683707557528846" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="3129714929680905" type="System" />
+                        <action id="-26" name="Restart layout" sid="3446182657444135" type="System" />
                     </actions>
                 </event-block>
                 <event-block sid="2812306150661084">
@@ -400,6 +457,11 @@
                             <param id="0" name="Variable">IsPaused</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4161265500750763" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -422,6 +484,11 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="1526145211831845" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="6366309063630485" type="Spaceship">
@@ -439,6 +506,12 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="8371496480665132" type="Audio">
+                                    <param id="0" name="Audio file">missile</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">10</param>
+                                    <param id="1" name="Tag (optional)">&quot;missile&quot;</param>
+                                </action>
                                 <action id="0" name="Spawn another object" sid="7966549211546829" type="Spaceship">
                                     <param id="0" name="Object">Rocket</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -465,7 +538,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="3822110230514458" type="Spaceship">
                                     <param id="0" name="Instance variable">timer</param>
-                                    <param id="1" name="Value">1</param>
+                                    <param id="1" name="Value">2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -479,8 +552,18 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="3695644689695872" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="9473358581457671" type="Spaceship">
+                            <param id="0" name="Instance variable">endX</param>
+                            <param id="1" name="Value">Touch.X</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="9791505512748771">
                             <conditions>
@@ -498,10 +581,6 @@
                             <actions>
                                 <action behavior="Platform" id="9" name="Set vector Y" sid="8244135530209524" type="Spaceship">
                                     <param id="0" name="Vector Y">-500</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="1010211363564146" type="Spaceship">
-                                    <param id="0" name="Instance variable">timer</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -522,8 +601,19 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="8146729264459019" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="1993913984573795" type="Audio">
+                            <param id="0" name="Audio file">missile</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">10</param>
+                            <param id="1" name="Tag (optional)">&quot;missile&quot;</param>
+                        </action>
                         <action id="0" name="Spawn another object" sid="3927915593563036" type="Spaceship">
                             <param id="0" name="Object">Rocket</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
@@ -542,7 +632,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="8427072409915477" type="Spaceship">
                             <param id="0" name="Instance variable">timer</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                     </actions>
                 </event-block>
@@ -557,6 +647,11 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="4115800484171332" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="Platform" id="9" name="Set vector Y" sid="960342423912742" type="Spaceship">
@@ -564,9 +659,51 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="4687421615228259">
+                    <conditions>
+                        <condition id="1" name="On any key pressed" sid="23632381829754" type="Keyboard" />
+                        <condition id="-14" name="Compare variable" sid="8745720683241966" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7878272460829371" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2221666268351048" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7542241344135342">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="9200036664758195" type="Touch" />
+                        <condition id="-14" name="Compare variable" sid="2371797116651921" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3960438755683006" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3033926599840976" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="" sid="6136297912486958" title="Collision">
+        <event-group description="" sid="6136297912486958" title="Collision">
             <sub-events>
                 <event-block sid="485821331562549">
                     <conditions>
@@ -574,15 +711,15 @@
                             <param id="0" name="Comparison">3</param>
                             <param id="1" name="X co-ordinate">(LayoutWidth / 2) - Spaceship.Width</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="6932677918331661" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
                         <condition id="-7" name="Compare instance variable" sid="5012377823439896" type="Asteroid">
                             <param id="0" name="Instance variable">isAvoided</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7133042304034942" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -644,8 +781,8 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="3800497424648332" type="Spaceship">
-                            <param id="0" name="Instance variable">isAlive</param>
+                        <action id="-9" name="Set value" sid="4717393907929187" type="System">
+                            <param id="0" name="Variable">IsPlayerAlive</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
@@ -692,6 +829,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="5200829140353769" type="Audio">
+                            <param id="0" name="Audio file">scream</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">10</param>
+                            <param id="1" name="Tag (optional)">&quot;scream&quot;</param>
+                        </action>
                         <action id="0" name="Spawn another object" sid="8716690214568383" type="Asteroid">
                             <param id="0" name="Object">TextBam</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
