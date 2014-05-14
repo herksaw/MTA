@@ -36,6 +36,7 @@
                     </properties>
                     <instance-variables>
                         <speed>8</speed>
+                        <id>1</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -61,6 +62,7 @@
                     </properties>
                     <instance-variables>
                         <speed>8</speed>
+                        <id>2</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

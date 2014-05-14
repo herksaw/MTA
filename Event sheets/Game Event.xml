@@ -238,6 +238,11 @@
                         <condition id="-6" name="Every X seconds" sid="2378154164442559" type="System">
                             <param id="0" name="Interval (seconds)">random(1, 2)</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="9414709019850838" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="7074716375455703" type="System">
