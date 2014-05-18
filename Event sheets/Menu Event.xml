@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu Event</name>
+    <events>
+        <event-block sid="1906246043617327">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2809544596170852" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="5944479989774359" type="System">
+                    <param id="0" name="Width">1366</param>
+                    <param id="1" name="Height">768</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1347857380366228">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1632488853494016" type="Touch">
+                    <param id="0" name="Object">ButtonStart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="7692389420104643" type="System">
+                    <param id="0" name="Width">2560</param>
+                    <param id="1" name="Height">1440</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="8809888268965854" type="System">
+                    <param id="0" name="Layout">Game Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6919788744503013">
+            <conditions>
+                <condition id="0" name="Is ready" sid="1912761113858573" type="Facebook" />
+                <condition id="1" name="Is online" sid="1558806746075761" type="Browser" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7618690555855194">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6114753653059913" type="Touch">
+                            <param id="0" name="Object">ButtonFacebook</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Log in" sid="5039761440671216" type="Facebook">
+                            <param id="0" name="Stream permission">0</param>
+                            <param id="1" name="Action permission">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

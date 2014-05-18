@@ -2,7 +2,7 @@
 <c2project>
     <name>My Twisted Alien</name>
     <description>A Flappy Bird clone.</description>
-    <version>1.0a build36</version>
+    <version>1.0b build2</version>
     <author>Lorenza Lo</author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Facebook" version="1">Facebook</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -33,6 +34,7 @@
         <height>1440</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
+    <first-layout>Menu Layout</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -238,6 +240,57 @@
         <object-type name="BoxTargetPoints" sid="4263968860588365">
             <plugin id="Text" />
         </object-type>
+        <object-type name="MenuBackground" sid="6978955453689201">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7219689708930359" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonStart" sid="7357588476123006">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8506034679168274" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.507042" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextTitle" sid="1575449006425987">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3816690267282983" speed="5">
+                    <frame duration="1" hotspotX="0.500782" hotspotY="0.506667" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonFacebook" sid="8332589740411168">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5050954816444943" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506849" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Facebook" sid="3665311889518003">
+            <plugin id="Facebook" />
+        </object-type>
+        <object-type name="ButtonMenu" sid="6671025031981258">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6911609261856433" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.507042" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonResume" sid="7515954335465705">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="863807452295231" speed="5">
+                    <frame duration="1" hotspotX="0.501901" hotspotY="0.507042" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Background" plugin-id="Sprite" sid="678458441439113">
@@ -300,9 +353,11 @@
     <layout-folder expanded="1">
         <layout>Game Layout.xml</layout>
         <layout>Spawn Layout.xml</layout>
+        <layout>Menu Layout.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>Game Event.xml</event-sheet>
+        <event-sheet>Menu Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="3">
@@ -328,6 +383,12 @@
             </properties>
         </global-instance>
         <global-instance type="WebStorage" uid="19" />
+        <global-instance type="Facebook" uid="25">
+            <properties>
+                <app-id>298331873663896</app-id>
+                <app-secret>ce95e91b8a3e4b57d45a060f379f3c9b</app-secret>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder expanded="1">
         <file name="big_bomb.m4a" />

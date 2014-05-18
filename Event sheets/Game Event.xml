@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="FirstTouch" sid="4658129233399448" static="0" type="number">0</variable>
         <variable constant="0" name="IsPlayerAlive" sid="354701535779683" static="0" type="number">1</variable>
         <variable constant="0" name="IsPaused" sid="1201803636252143" static="0" type="number">0</variable>
         <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
@@ -417,6 +418,49 @@
         </event-group>
         <event-group description="" sid="5250872597120368" title="Input">
             <sub-events>
+                <event-block sid="5046924885067408">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2218544102935606" type="Touch">
+                            <param id="0" name="Object">ButtonMenu</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3301219554539713" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8854509243249913" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5814662723403731" type="System">
+                            <param id="0" name="Object to create">ButtonResume</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">LayoutWidth / 2</param>
+                            <param id="3" name="Y">LayoutHeight / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3829689183044022">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3269239813447337" type="Touch">
+                            <param id="0" name="Object">ButtonResume</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7945413057745392" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2226040705402722" type="System">
+                            <param id="0" name="Variable">IsPaused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2542064635040676" type="ButtonResume" />
+                    </actions>
+                </event-block>
                 <event-block sid="4827355653838829">
                     <conditions>
                         <condition id="1" name="On any touch end" sid="6790782018847326" type="Touch" />
@@ -677,11 +721,20 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="279677942322969" type="System">
+                            <param id="0" name="Variable">FirstTouch</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="2221666268351048" type="System">
                             <param id="0" name="Variable">IsPaused</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3344545651282256" type="System">
+                            <param id="0" name="Variable">FirstTouch</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -698,11 +751,20 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="7771163198812724" type="System">
+                            <param id="0" name="Variable">FirstTouch</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="3033926599840976" type="System">
                             <param id="0" name="Variable">IsPaused</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8999684737067343" type="System">
+                            <param id="0" name="Variable">FirstTouch</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
