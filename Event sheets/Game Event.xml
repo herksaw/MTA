@@ -7,9 +7,9 @@
         <variable constant="0" name="IsPlayerAlive" sid="354701535779683" static="0" type="number">1</variable>
         <variable constant="0" name="IsPaused" sid="1201803636252143" static="0" type="number">0</variable>
         <variable constant="0" name="AsteroidVariation" sid="3440678168478842" static="0" type="number">0</variable>
-        <event-group description="" sid="7242745080238681" title="System">
+        <event-group collapsed="1" description="" sid="7242745080238681" title="System">
             <sub-events>
-                <event-block sid="7492774530184119">
+                <event-block collapsed="1" sid="7492774530184119">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="5002268626205124" type="System" />
                     </conditions>
@@ -708,61 +708,33 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="4687421615228259">
+                <event-block sid="5281455048784651">
                     <conditions>
-                        <condition id="1" name="On any key pressed" sid="23632381829754" type="Keyboard" />
-                        <condition id="-14" name="Compare variable" sid="8745720683241966" type="System">
+                        <condition id="3" name="On touched object" sid="5218984777173169" type="Touch">
+                            <param id="0" name="Object">BackgroundSpace</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9955800339929204" type="System">
                             <param id="0" name="Variable">IsPaused</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="7878272460829371" type="System">
+                        <condition id="-14" name="Compare variable" sid="3660731592863961" type="System">
                             <param id="0" name="Variable">IsPlayerAlive</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
-                        <condition id="-14" name="Compare variable" sid="279677942322969" type="System">
+                        <condition id="-14" name="Compare variable" sid="1973426087811389" type="System">
                             <param id="0" name="Variable">FirstTouch</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="2221666268351048" type="System">
+                        <action id="-9" name="Set value" sid="6297571849795913" type="System">
                             <param id="0" name="Variable">IsPaused</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-9" name="Set value" sid="3344545651282256" type="System">
-                            <param id="0" name="Variable">FirstTouch</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="7542241344135342">
-                    <conditions>
-                        <condition id="1" name="On any touch end" sid="9200036664758195" type="Touch" />
-                        <condition id="-14" name="Compare variable" sid="2371797116651921" type="System">
-                            <param id="0" name="Variable">IsPaused</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="3960438755683006" type="System">
-                            <param id="0" name="Variable">IsPlayerAlive</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="7771163198812724" type="System">
-                            <param id="0" name="Variable">FirstTouch</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="3033926599840976" type="System">
-                            <param id="0" name="Variable">IsPaused</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="8999684737067343" type="System">
+                        <action id="-9" name="Set value" sid="3395691020113832" type="System">
                             <param id="0" name="Variable">FirstTouch</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -770,7 +742,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="6136297912486958" title="Collision">
+        <event-group collapsed="1" description="" sid="6136297912486958" title="Collision">
             <sub-events>
                 <event-block sid="485821331562549">
                     <conditions>

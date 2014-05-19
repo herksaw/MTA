@@ -4,8 +4,8 @@
     <sid>6284009995993051</sid>
     <event-sheet>Menu Event</event-sheet>
     <size>
-        <width>1368</width>
-        <height>768</height>
+        <width>2560</width>
+        <height>1440</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -37,11 +37,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>684</x>
-                        <y>384</y>
+                        <x>1280</x>
+                        <y>720</y>
                         <z>0</z>
-                        <width>1368</width>
-                        <height>768</height>
+                        <width>2560</width>
+                        <height>1440</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -76,8 +76,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>684.5</x>
-                        <y>284.5</y>
+                        <x>1280.5</x>
+                        <y>484.5</y>
                         <z>0</z>
                         <width>203</width>
                         <height>71</height>
@@ -98,8 +98,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>684.5</x>
-                        <y>109</y>
+                        <x>1280.5</x>
+                        <y>209</y>
                         <z>0</z>
                         <width>639</width>
                         <height>75</height>
@@ -120,8 +120,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>684</x>
-                        <y>402</y>
+                        <x>1280</x>
+                        <y>720.5</y>
                         <z>0</z>
                         <width>344</width>
                         <height>73</height>

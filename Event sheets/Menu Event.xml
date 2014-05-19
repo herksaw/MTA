@@ -3,14 +3,16 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Menu Event</name>
     <events>
-        <event-block sid="1906246043617327">
+        <event-block sid="4358401311013795">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="2809544596170852" type="System" />
+                <condition id="3" name="Local key exists" sid="6444910648059961" type="WebStorage">
+                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-28" name="Set canvas size" sid="5944479989774359" type="System">
-                    <param id="0" name="Width">1366</param>
-                    <param id="1" name="Height">768</param>
+                <action id="0" name="Set local value" sid="1410018980279384" type="WebStorage">
+                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                    <param id="1" name="Value">&quot;false&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -21,10 +23,11 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-28" name="Set canvas size" sid="7692389420104643" type="System">
-                    <param id="0" name="Width">2560</param>
-                    <param id="1" name="Height">1440</param>
+                <action id="0" name="Set local value" sid="5004267836458335" type="WebStorage">
+                    <param id="0" name="Key">&quot;facebook&quot;</param>
+                    <param id="1" name="Value">&quot;false&quot;</param>
                 </action>
+                <action id="-21" name="Reset global variables" sid="7111606386528474" type="System" />
                 <action id="-2" name="Go to layout" sid="8809888268965854" type="System">
                     <param id="0" name="Layout">Game Layout</param>
                 </action>
@@ -44,9 +47,29 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Set local value" sid="5249851372702144" type="WebStorage">
+                            <param id="0" name="Key">&quot;facebook&quot;</param>
+                            <param id="1" name="Value">&quot;true&quot;</param>
+                        </action>
                         <action id="2" name="Log in" sid="5039761440671216" type="Facebook">
                             <param id="0" name="Stream permission">0</param>
                             <param id="1" name="Action permission">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3622409017768418">
+                    <conditions>
+                        <condition id="2" name="On user logged in" sid="684927064139861" type="Facebook" />
+                        <condition id="6" name="Compare key value (as text)" sid="2725102416554371" type="WebStorage">
+                            <param id="0" name="Key">&quot;facebook&quot;</param>
+                            <param id="1" name="Text to compare">&quot;true&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="6172988955369869" type="System" />
+                        <action id="-2" name="Go to layout" sid="5128027066610574" type="System">
+                            <param id="0" name="Layout">Game Layout</param>
                         </action>
                     </actions>
                 </event-block>
